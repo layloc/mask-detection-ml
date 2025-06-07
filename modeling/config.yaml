@@ -1,0 +1,13 @@
+model: yolov8x.yaml
+data: ../data/dataset.yaml
+epochs: 100
+imgsz: 640
+batch: 8
+optimizer: AdamW
+lr0: 0.0001
+weight_decay: 0.0005
+dropout: 0.2
+patience: 10
+freeze: 24  # Freeze first 24 layers
+class_weights: [1.0, 2.0, 10.0]  # For class imbalance
+modeling/train.py:
